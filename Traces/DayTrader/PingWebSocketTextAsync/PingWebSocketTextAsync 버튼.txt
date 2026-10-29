@@ -1,0 +1,4 @@
+PingWebSocketTextSync
+PingWebSocketTextAsync
+PingWebSocketTextAsync
+Integer

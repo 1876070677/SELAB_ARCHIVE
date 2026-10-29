@@ -1,0 +1,17 @@
+PingServlet2JNDI
+PingServlet2JNDI
+Date
+PingServlet2JNDI
+HttpServletResponse
+HttpServletResponse
+StringBuilder
+StringBuilder
+StringBuilder
+StringBuffer
+StringBuilder
+StringBuilder
+StringBuilder
+StringBuffer
+StringBuffer
+StringBuffer
+PrintWriter
