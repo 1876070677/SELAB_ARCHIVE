@@ -115,4 +115,8 @@ Order
 OrderForm 
 Order 
 OrderForm 
-Order 
+Order
+shippingForm(jsp)
+IncludeBottom(jsp)
+IncludeTop(jsp)
+IncludeQuickHeader(jsp)

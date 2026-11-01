@@ -434,3 +434,6 @@ PetType
 NamedEntity
 String
 BaseEntity
+layout(html)
+inputField(html)
+selectField(html)

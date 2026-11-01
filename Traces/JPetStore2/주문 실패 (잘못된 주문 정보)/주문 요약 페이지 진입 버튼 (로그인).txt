@@ -40,3 +40,6 @@ CartItem
 CartItem 
 Cart 
 Cart 
+IncludeBottom(jsp)
+IncludeTop(jsp)
+IncludeQuickHeader(jsp)

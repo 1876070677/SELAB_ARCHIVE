@@ -23,6 +23,7 @@ IncludeAccountFields(jsp),0.5714285714285714,0.0,0.0,0.0
 IncludeBanner(jsp),0.5714285714285714,1.0,0.0,0.0
 IncludeBottom(jsp),0.8571428571428571,0.0,1.0,1.0
 IncludeMyList(jsp),0.0,1.0,0.0,0.0
+IncludeQuickHeader(jsp),1.0,1.0,1.0,1.0
 IncludeTop(jsp),1.0,1.0,1.0,1.0
 index(jsp),0.5714285714285714,0.0,0.0,0.0
 inventory(table),0.0,0.16666666666666666,0.2,0.4
@@ -55,6 +56,7 @@ SearchProducts(jsp),0.0,0.0,0.4,0.0
 SearchProductsController,0.0,0.0,0.4,0.0
 Sequence,0.0,0.0,0.0,0.4
 sequence(table),0.0,0.0,0.0,0.4
+shippingForm(jsp),0.0,0.0,0.0,0.2
 SignoffController,0.14285714285714285,0.0,0.0,0.0
 signon(table),0.7142857142857143,0.0,0.0,0.4
 SignonController,0.2857142857142857,0.0,0.0,0.0

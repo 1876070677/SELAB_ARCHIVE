@@ -85,3 +85,5 @@ Pet
 PropertyComparator
 Collections
 BaseEntity
+layout(html)
+inputField(html)

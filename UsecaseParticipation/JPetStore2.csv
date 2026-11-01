@@ -23,6 +23,7 @@ IncludeAccountFields(jsp),1,0,0,0
 IncludeBanner(jsp),1,1,0,0
 IncludeBottom(jsp),1,0,1,1
 IncludeMyList(jsp),0,1,0,0
+IncludeQuickHeader(jsp),1,1,1,1
 IncludeTop(jsp),1,1,1,1
 index(jsp),1,0,0,0
 inventory(table),0,1,1,1
@@ -55,6 +56,7 @@ SearchProducts(jsp),0,0,1,0
 SearchProductsController,0,0,1,0
 Sequence,0,0,0,1
 sequence(table),0,0,0,1
+shippingForm(jsp),0,0,0,1
 SignoffController,1,0,0,0
 signon(table),1,0,0,1
 SignonController,1,0,0,0

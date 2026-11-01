@@ -8,3 +8,4 @@ OwnerController
 WebDataBinder
 Person
 Person
+layout(html)

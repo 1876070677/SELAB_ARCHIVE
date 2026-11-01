@@ -1,26 +1,18 @@
 """유스케이스 행렬 생성 공통 로직.
 
-- Traces/<webapp>/<scenario>/**/*.txt : 시나리오별 실행 컴포넌트 트레이스 (한 줄 = 컴포넌트 1개)
+- Traces/<webapp>/<scenario>/**/*.txt : 시나리오별 실행 컴포넌트 트레이스 (한 줄 = 컴포넌트 1개, include 디펜던시는 insert_includes.py로 미리 삽입)
 - ScenariosByUsecases/<webapp>.json  : {유스케이스: [시나리오명, ...]}
-- Includes/<webapp>.xlsx             : Sheet1의 Source/Target 열 (Source 컴포넌트가 실행되면 Target도 실행된 것으로 간주)
 """
 import argparse
 import csv
 import json
 import sys
 import unicodedata
-from collections import defaultdict
 from pathlib import Path
-
-import openpyxl
 
 ARCHIVE_ROOT = Path(__file__).resolve().parent
 TRACES_DIR = ARCHIVE_ROOT / 'Traces'
 USECASES_DIR = ARCHIVE_ROOT / 'ScenariosByUsecases'
-INCLUDES_DIR = ARCHIVE_ROOT / 'Includes'
-
-# include 디펜던시를 적용하지 않는 웹 앱
-NO_INCLUDE_WEBAPPS = {'DayTrader'}
 
 
 def nfc(s: str) -> str:
@@ -47,40 +39,9 @@ def read_components(txt_path: Path) -> set[str]:
     return comps
 
 
-def load_include_relation(webapp: str) -> dict[str, set[str]]:
-    """Source 컴포넌트 -> include하는 Target 컴포넌트 set. 적용 대상이 아니면 빈 dict."""
-    if webapp in NO_INCLUDE_WEBAPPS:
-        return {}
-    path = INCLUDES_DIR / f'{webapp}.xlsx'
-    if not path.exists():
-        print(f"[WARN] {webapp}: include 파일 없음 -> {path}", file=sys.stderr)
-        return {}
-
-    ws = openpyxl.load_workbook(path, read_only=True)['Sheet1']
-    rows = ws.iter_rows(values_only=True)
-    header = [str(h).strip() for h in next(rows)]
-    src_idx, tgt_idx = header.index('Source'), header.index('Target')
-
-    relation = defaultdict(set)
-    for row in rows:
-        source, target = row[src_idx], row[tgt_idx]
-        if source and target:
-            relation[str(source).strip()].add(str(target).strip())
-    return relation
-
-
-def expand_includes(comps: set[str], relation: dict[str, set[str]]) -> set[str]:
-    """트레이스에 나온 Source 컴포넌트의 Target만 추가 (한 단계만, 연쇄 include는 따라가지 않음)."""
-    result = set(comps)
-    for comp in comps:
-        result |= relation.get(comp, set())
-    return result
-
-
 def load_scenario_components(webapp: str) -> dict[str, set[str]]:
-    """시나리오명(NFC) -> 해당 시나리오에서 실행된 컴포넌트 set (include 디펜던시 반영)."""
+    """시나리오명(NFC) -> 해당 시나리오에서 실행된 컴포넌트 set."""
     app_dir = TRACES_DIR / webapp
-    relation = load_include_relation(webapp)
     scenario_to_components = {}
     for d in app_dir.iterdir():
         if not d.is_dir() or d.name.startswith('.'):
@@ -89,7 +50,7 @@ def load_scenario_components(webapp: str) -> dict[str, set[str]]:
         for txt in d.rglob('*.txt'):
             if not is_hidden(txt, d):
                 comps |= read_components(txt)
-        scenario_to_components[nfc(d.name)] = expand_includes(comps, relation)
+        scenario_to_components[nfc(d.name)] = comps
     return scenario_to_components
 
 
@@ -153,5 +114,4 @@ def run(description: str, default_out_dir: str, value_fn) -> None:
         components, usecases, rows = build_matrix(webapp, value_fn)
         out_path = args.out_dir / f'{webapp}.csv'
         write_csv(out_path, usecases, rows)
-        include = 'off' if webapp in NO_INCLUDE_WEBAPPS else 'on'
-        print(f'[{webapp}] include={include} components={len(components)} usecases={len(usecases)} -> {out_path}')
+        print(f'[{webapp}] components={len(components)} usecases={len(usecases)} -> {out_path}')

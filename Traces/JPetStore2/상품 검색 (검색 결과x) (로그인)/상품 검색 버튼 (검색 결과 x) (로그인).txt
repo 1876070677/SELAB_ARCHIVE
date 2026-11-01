@@ -17,3 +17,6 @@ product(table)
 SearchProducts(jsp) 
 UserSession 
 UserSession 
+IncludeBottom(jsp)
+IncludeTop(jsp)
+IncludeQuickHeader(jsp)
