@@ -1,0 +1,40 @@
+component,cluster,usecase,ground_truth
+ConfirmServlet,0,Order product,0
+HistoryDAO,0,Order product,0
+HistoryDAOImpl,0,Order product,0
+history(jsp),0,Order product,0
+history(table),0,Order product,0
+History,0,Order product,0
+LoginServlet,1,Manage account,1
+RegisterServlet,1,Manage account,1
+ResetPassword,1,Manage account,1
+UpdateUser,1,Manage account,1
+UserDAO,1,Manage account,1
+UserDAOImpl,1,Manage account,1
+login(jsp),1,Manage account,1
+LogoutServlet,2,Manage shopping cart,1
+User,1,Manage account,1
+register(jsp),1,Manage account,1
+resetpassword(jsp),1,Manage account,1
+update_user(jsp),1,Manage account,1
+user(table),1,Manage account,1
+cart(jsp),2,Manage shopping cart,2
+GioHangServlet,2,Manage shopping cart,2
+Cart,2,Manage shopping cart,2
+category(jsp),3,Browse product,3
+category(table),3,Browse product,3
+SearchServlet,3,Browse product,3
+CategoryDAO,3,Browse product,3
+CategoryDAOImpl,3,Browse product,3
+ProductDAO,3,Browse product,3
+ProductDAOImpl,3,Browse product,3
+detail(jsp),0,Order product,3
+Category,3,Browse product,3
+Product,3,Browse product,3
+product(jsp),3,Browse product,3
+product(table),3,Browse product,3
+search_menu(jsp),3,Browse product,3
+search_page(jsp),3,Browse product,3
+index(jsp),3,Browse product,3
+DBConnect,1,Manage account,-1
+footer(jsp),3,Browse product,-1

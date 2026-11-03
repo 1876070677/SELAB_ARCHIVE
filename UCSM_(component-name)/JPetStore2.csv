@@ -1,0 +1,85 @@
+component,cluster,usecase,ground_truth
+ListOrdersController,0,Order product,0
+SendOrderConfirmationEmailAdvice,0,Order product,0
+OrderFormController,0,Order product,0
+ViewOrderController,0,Order product,0
+ListOrders(jsp),0,Order product,0
+ViewOrder(jsp),0,Order product,0
+NewOrderForm(jsp),0,Order product,0
+ShippingForm(jsp),0,Order product,0
+ConfirmOrder(jsp),0,Order product,0
+OrderDao,0,Order product,0
+LineItem,0,Order product,0
+OrderValidator,0,Order product,0
+Order,0,Order product,0
+OrderService,0,Order product,0
+OrderServiceClient,0,Order product,0
+JaxRpcOrderService,0,Order product,0
+OrderForm,0,Order product,0
+Sequence,0,Order product,0
+SqlMapSequenceDao,0,Order product,0
+SqlMapOrderDao,0,Order product,0
+sequence(table),0,Order product,0
+lineitem(table),0,Order product,0
+orders(table),0,Order product,0
+orderstatus(table),0,Order product,0
+AccountDao,1,Manage account,1
+AccountValidator,1,Manage account,1
+Account,1,Manage account,1
+SignonInterceptor,1,Manage account,1
+UserSession,1,Manage account,1
+SignonController,1,Manage account,1
+AccountFormController,1,Manage account,1
+AccountForm,1,Manage account,1
+SqlMapAccountDao,1,Manage account,1
+SignoffController,1,Manage account,1
+account(table),1,Manage account,1
+profile(table),1,Manage account,1
+signon(table),1,Manage account,1
+bannerdata(table),3,Browse product,1
+EditAccountForm(jsp),1,Manage account,1
+SignonForm(jsp),1,Manage account,1
+IncludeAccountFields(jsp),1,Manage account,1
+IncludeMyList(jsp),3,Browse product,1
+Cart,2,Manage shopping cart,2
+CartItem,2,Manage shopping cart,2
+RemoveItemFromCartController,2,Manage shopping cart,2
+UpdateCartQuantitiesController,2,Manage shopping cart,2
+ViewCartController,2,Manage shopping cart,2
+AddItemToCartController,2,Manage shopping cart,2
+Cart(jsp),2,Manage shopping cart,2
+Checkout(jsp),2,Manage shopping cart,2
+CategoryDao,3,Browse product,3
+ProductDao,3,Browse product,3
+Product,3,Browse product,3
+Category,3,Browse product,3
+ViewItemController,3,Browse product,3
+ViewCategoryController,3,Browse product,3
+ViewProductController,3,Browse product,3
+SearchProductsController,3,Browse product,3
+SqlMapCategoryDao,3,Browse product,3
+SqlMapProductDao,3,Browse product,3
+category(table),3,Browse product,3
+SearchProducts(jsp),3,Browse product,3
+Category(jsp),3,Browse product,3
+Item(jsp),3,Browse product,3
+Product(jsp),3,Browse product,3
+ItemDao,3,Browse product,3
+product(table),3,Browse product,3
+item(table),3,Browse product,3
+inventory(table),2,Manage shopping cart,3
+supplier(table),0,Order product,3
+Item,3,Browse product,3
+SqlMapItemDao,3,Browse product,3
+index(jsp),3,Browse product,3
+PetStoreFacade,2,Manage shopping cart,-1
+PetStoreImpl,2,Manage shopping cart,-1
+Error(jsp),2,Manage shopping cart,-1
+IncludeBanner(jsp),3,Browse product,-1
+IncludeBottom(jsp),3,Browse product,-1
+IncludeQuickHeader(jsp),3,Browse product,-1
+IncludeTop(jsp),3,Browse product,-1
+index(html),3,Browse product,-1
+help(html),3,Browse product,-1
+OracleSequenceDao,0,Order product,-1
+MsSqlOrderDao,0,Order product,-1

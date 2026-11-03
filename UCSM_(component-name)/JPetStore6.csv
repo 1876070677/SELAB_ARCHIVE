@@ -1,0 +1,60 @@
+component,cluster,usecase,ground_truth
+ConfirmOrder(jsp),0,Order product,0
+LineItem,0,Order product,0
+lineitem(table),0,Order product,0
+LineItemMapper,0,Order product,0
+ListOrders(jsp),0,Order product,0
+NewOrderForm(jsp),0,Order product,0
+Order,0,Order product,0
+OrderActionBean,0,Order product,0
+OrderMapper,0,Order product,0
+orders(table),0,Order product,0
+OrderService,0,Order product,0
+orderstatus(table),0,Order product,0
+Sequence,0,Order product,0
+sequence(table),0,Order product,0
+SequenceMapper,0,Order product,0
+ShippingForm(jsp),0,Order product,0
+ViewOrder(jsp),0,Order product,0
+Account,1,Manage account,1
+account(table),1,Manage account,1
+AccountActionBean,1,Manage account,1
+AccountMapper,1,Manage account,1
+AccountService,1,Manage account,1
+bannerdata(table),3,Browse product,1
+EditAccountForm(jsp),1,Manage account,1
+IncludeAccountFields(jsp),1,Manage account,1
+NewAccountForm(jsp),1,Manage account,1
+profile(table),1,Manage account,1
+signon(table),1,Manage account,1
+SignonForm(jsp),1,Manage account,1
+IncludeMyList(jsp),3,Browse product,1
+Cart,2,Manage shopping cart,2
+Cart(jsp),2,Manage shopping cart,2
+CartActionBean,2,Manage shopping cart,2
+CartItem,2,Manage shopping cart,2
+Checkout(jsp),2,Manage shopping cart,2
+CatalogActionBean,3,Browse product,3
+CatalogService,3,Browse product,3
+Category,3,Browse product,3
+Category(jsp),3,Browse product,3
+category(table),3,Browse product,3
+CategoryMapper,3,Browse product,3
+inventory(table),2,Manage shopping cart,3
+Item,3,Browse product,3
+Item(jsp),3,Browse product,3
+item(table),3,Browse product,3
+ItemMapper,3,Browse product,3
+Product,3,Browse product,3
+Product(jsp),3,Browse product,3
+product(table),3,Browse product,3
+ProductMapper,3,Browse product,3
+SearchProducts(jsp),3,Browse product,3
+supplier(table),0,Order product,3
+Main(jsp),1,Manage account,3
+AbstractActionBean,2,Manage shopping cart,-1
+Error(jsp),2,Manage shopping cart,-1
+IncludeBottom(jsp),3,Browse product,-1
+IncludeTop(jsp),3,Browse product,-1
+index(html),3,Browse product,-1
+help(html),3,Browse product,-1

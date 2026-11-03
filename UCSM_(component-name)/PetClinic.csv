@@ -1,0 +1,45 @@
+component,cluster,usecase,ground_truth
+Specialty,0,View veterinarian,0
+specialties(table),0,View veterinarian,0
+Vet,0,View veterinarian,0
+vet_specialties(table),0,View veterinarian,0
+vetList(html),0,View veterinarian,0
+VetRepository,0,View veterinarian,0
+VetController,0,View veterinarian,0
+vets(table),0,View veterinarian,0
+Vets,0,View veterinarian,0
+CacheConfiguration,1,Manage visit schedule,0
+Visit,1,Manage visit schedule,1
+VisitRepository,1,Manage visit schedule,1
+VisitController,1,Manage visit schedule,1
+visits(table),1,Manage visit schedule,1
+createOrUpdateVisitForm(html),1,Manage visit schedule,1
+OwnerController,2,Manage customer,2
+Owner,2,Manage customer,2
+ownerDetails(html),2,Manage customer,2
+createOrUpdateOwnerForm(html),2,Manage customer,2
+ownersList(html),2,Manage customer,2
+OwnerRepository,2,Manage customer,2
+owners(table),2,Manage customer,2
+Pet,2,Manage customer,2
+createOrUpdatePetForm(html),2,Manage customer,2
+PetRepository,2,Manage customer,2
+PetController,2,Manage customer,2
+pets(table),2,Manage customer,2
+PetType,0,View veterinarian,2
+types(table),0,View veterinarian,2
+PetValidator,2,Manage customer,2
+PetTypeFormatter,0,View veterinarian,2
+findOwners(html),2,Manage customer,2
+BaseEntity,2,Manage customer,-1
+NamedEntity,2,Manage customer,-1
+Person,2,Manage customer,-1
+PetClinicApplication,2,Manage customer,-1
+WelcomeController,2,Manage customer,-1
+CrashController,2,Manage customer,-1
+error(html),2,Manage customer,-1
+inputField(html),2,Manage customer,-1
+selectField(html),0,View veterinarian,-1
+welcome(html),2,Manage customer,-1
+layout(html),2,Manage customer,-1
+package-info,0,View veterinarian,-1

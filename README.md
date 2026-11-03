@@ -21,3 +21,14 @@ python usecase_execution_rate.py <webapp>   # UsecaseExecutionRate: 유스케이
 ```
 
 `insert_includes.py`는 이미 있는 컴포넌트를 다시 넣지 않으므로 여러 번 실행해도 결과가 같음. `Includes/<webapp>.xlsx`와 트레이스가 모두 있는 웹 앱(JPetStore2, PetClinic, ShoppingApp)에만 실행할 수 있음.
+
+# UCSM 실험 재현
+```
+python ucsm_component_name.py [webapp ...]   # 생략 시 전체 웹 앱
+```
+
+컴포넌트 이름과 유스케이스 명세의 임베딩 유사도로 컴포넌트를 유스케이스에 매핑함. 결과는 `UCSM_(component-name)`에 저장됨 (`<webapp>.csv`: 컴포넌트별 예측, `metrics.csv`: Accuracy, Macro-F1).
+
+- 유스케이스 명세: `UsecaseDescription`
+- 불용어: JPetStore2, PetClinic, ShoppingApp은 `UCSM_(component-name)_stopwords/stoplist2.txt` 사용, JPetStore6, DayTrader는 사용하지 않음
+- 정답: `GroundTruth`
