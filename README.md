@@ -10,14 +10,14 @@ DayTrader는 재실험을 하는 과정에서 AOP를 손봤고 조금 더 잘 �
 
 새 트레이스를 추가했다면 행렬을 만들기 전에 `insert_includes.py`를 먼저 실행해야 함. 실행하지 않아도 경고 없이 Include 대상 컴포넌트만 빠진 행렬이 만들어짐.
 
-# 사용법
+# 동적모델 생성방법
 JPetStore6는 트레이스가 없어 실행할 수 없으므로, 웹 앱을 생략하지 말고 지정해서 실행함.
 
 ```
 python insert_includes.py <webapp>          # 트레이스 전처리 (필요할 때만, 원본 트레이스가 변경됨)
 python components_by_scenario.py <webapp>   # ComponentsByScenarios: 시나리오별 컴포넌트 실행 여부
-python usecase_participation.py <webapp>    # UsecaseParticipation: 유스케이스별 컴포넌트 실행 여부
-python usecase_execution_rate.py <webapp>   # UsecaseExecutionRate: 유스케이스별 컴포넌트 실행 비율
+python usecase_participation.py <webapp>    # Reproduction/UsecaseParticipation: 유스케이스별 컴포넌트 실행 여부
+python usecase_execution_rate.py <webapp>   # Reproduction/UsecaseExecutionRate: 유스케이스별 컴포넌트 실행 비율
 ```
 
 `insert_includes.py`는 이미 있는 컴포넌트를 다시 넣지 않으므로 여러 번 실행해도 결과가 같음. `Includes/<webapp>.xlsx`와 트레이스가 모두 있는 웹 앱(JPetStore2, PetClinic, ShoppingApp)에만 실행할 수 있음.
@@ -27,7 +27,7 @@ python usecase_execution_rate.py <webapp>   # UsecaseExecutionRate: 유스케이
 python ucsm_component_name.py [webapp ...]   # 생략 시 전체 웹 앱
 ```
 
-컴포넌트 이름과 유스케이스 명세의 임베딩 유사도로 컴포넌트를 유스케이스에 매핑함. 결과는 `UCSM_(component-name)`에 저장됨 (`<webapp>.csv`: 컴포넌트별 예측, `metrics.csv`: Accuracy, Macro-F1).
+컴포넌트 이름과 유스케이스 명세의 임베딩 유사도로 컴포넌트를 유스케이스에 매핑함. 결과는 `Reproduction/UCSM_(component-name)`에 저장됨 (`<webapp>.csv`: 컴포넌트별 예측, `metrics.csv`: Accuracy, Macro-F1).
 
 - 유스케이스 명세: `UsecaseDescription`
 - 불용어: JPetStore2, PetClinic, ShoppingApp은 `UCSM_(component-name)_stopwords/stoplist2.txt` 사용, JPetStore6, DayTrader는 사용하지 않음

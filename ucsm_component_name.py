@@ -5,8 +5,8 @@
 - GroundTruth/<webapp>_ans.csv                        : 컴포넌트별 정답 클러스터 (-1: 유틸리티)
 
 결과:
-- UCSM_(component-name)/<webapp>.csv : 컴포넌트별 예측 (cluster는 명세 파일의 유스케이스 순서)
-- UCSM_(component-name)/metrics.csv  : 웹 앱별 Accuracy, Macro-F1 (실행한 웹 앱의 행만 갱신)
+- Reproduction/UCSM_(component-name)/<webapp>.csv : 컴포넌트별 예측 (cluster는 명세 파일의 유스케이스 순서)
+- Reproduction/UCSM_(component-name)/metrics.csv  : 웹 앱별 Accuracy, Macro-F1 (실행한 웹 앱의 행만 갱신)
 
 사용법:
     python ucsm_component_name.py                # 전체 웹 앱
@@ -104,8 +104,8 @@ def run(encode, webapp: str, out_dir: Path) -> dict:
 def main():
     parser = argparse.ArgumentParser(description='UCSM 실험 재현 (컴포넌트 이름 임베딩)')
     parser.add_argument('webapps', nargs='*', help=f"대상 웹 앱 (생략 시 전체: {', '.join(WEBAPPS)})")
-    parser.add_argument('-o', '--out-dir', type=Path, default=ARCHIVE_ROOT / 'UCSM_(component-name)',
-                        help='결과 저장 폴더 (기본: UCSM_(component-name))')
+    parser.add_argument('-o', '--out-dir', type=Path, default=ARCHIVE_ROOT / 'Reproduction' / 'UCSM_(component-name)',
+                        help='결과 저장 폴더 (기본: Reproduction/UCSM_(component-name))')
     args = parser.parse_args()
 
     webapps = args.webapps or WEBAPPS

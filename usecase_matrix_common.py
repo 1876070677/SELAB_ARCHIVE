@@ -13,6 +13,7 @@ from pathlib import Path
 ARCHIVE_ROOT = Path(__file__).resolve().parent
 TRACES_DIR = ARCHIVE_ROOT / 'Traces'
 USECASES_DIR = ARCHIVE_ROOT / 'ScenariosByUsecases'
+REPRODUCTION_DIR = ARCHIVE_ROOT / 'Reproduction'
 
 
 def nfc(s: str) -> str:
@@ -101,8 +102,8 @@ def run(description: str, default_out_dir: str, value_fn) -> None:
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('webapps', nargs='*',
                         help=f"대상 웹 앱 (생략 시 전체: {', '.join(available_webapps())})")
-    parser.add_argument('-o', '--out-dir', type=Path, default=ARCHIVE_ROOT / default_out_dir,
-                        help=f'결과 CSV 저장 폴더 (기본: {default_out_dir})')
+    parser.add_argument('-o', '--out-dir', type=Path, default=REPRODUCTION_DIR / default_out_dir,
+                        help=f'결과 CSV 저장 폴더 (기본: Reproduction/{default_out_dir})')
     args = parser.parse_args()
 
     webapps = args.webapps or available_webapps()
